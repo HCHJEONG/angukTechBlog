@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Anguk Group Tech Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Anguk Group Tech Blog">
+<meta property="og:url" content="index.html">
+<meta property="og:site_name" content="Anguk Group Tech Blog">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:author" content="Heechan Jeong">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Anguk Group Tech Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="css/style.css">
+
+  
+    
+<link rel="stylesheet" href="fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Anguk Group Tech Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="검색"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="검색"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http:/hchjeong.github.io/angukTechBlog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-vscode-ide-for-python-flutter-docker-hexo-in-win10" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="2023/04/07/vscode-ide-for-python-flutter-docker-hexo-in-win10/" class="article-date">
+  <time class="dt-published" datetime="2023-04-07T01:19:17.648Z" itemprop="datePublished">2023-04-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="2023/04/07/vscode-ide-for-python-flutter-docker-hexo-in-win10/">Windows 10에서 VSCODE 개발환경의 설정</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="VSCODE를-이용한-파이썬-개발"><a href="#VSCODE를-이용한-파이썬-개발" class="headerlink" title="VSCODE를 이용한 파이썬 개발"></a><strong>VSCODE를 이용한 파이썬 개발</strong></h2><p><img src="https://miro.medium.com/max/3836/1*we5v52-t4si1fvhi6pHB1w.png" alt="image"></p>
+<h3 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h3><ul>
+<li>우선 파이썬이 아나콘다 패키지로 설치되어 있을 것을 권장한다.</li>
+<li>VSCODE를 설치해야 한다.</li>
+<li>그리고 VSCODE 파이썬 플러그인을 설치해야 한다.</li>
+</ul>
+<h3 id="가상환경과-디버깅"><a href="#가상환경과-디버깅" class="headerlink" title="가상환경과 디버깅"></a>가상환경과 디버깅</h3><ul>
+<li><p>파이썬 프로젝트의 실행환경을 위해서 다음처럼 프로젝트 폴더에서 터미널을 킨 후 가상환경을 구축할 수 있다.</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m venv venv</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>하지만 기본 터미널인 파워쉘에서는 여러 에러가 나기 때문에 관리자 모드로 파워쉘을 한 번 실행한 후 <code>Set-ExecutionPolicy Unrestricted</code> 실행시킨다. 그러면 가상환경 실행에 무리가 없다.</p>
+</li>
+<li><p>디버깅을 할 때 .vscode 폴더에 settings.json을 만들고 아래와 같이 하면 가상환경 없이 디버깅이 된다.</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;python.terminal.activateEnvironment&quot;</span>: false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>디버깅을 할 때 .vscode 폴더에 settings.json을 만들고 아래와 같이 하면 가상환경으로 디버깅이 된다. “venv” 이름으로 가상환경 폴더를 만들었을 경우이다.</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;python.pythonPath&quot;</span>: <span class="string">&quot;venv\\Scripts\\python.exe&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>다른 프로젝트 개발을 하게 될 때 ‘deactivate’를 해서 가상환경에서 빠져나온다.</p>
+</li>
+<li><p>가상환경에 설치된 패키지들은 다음의 방법으로 기록하였다가 설치할 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(example) C:\\project\example&gt;pip <span class="built_in">list</span></span><br><span class="line">(example) C:\\project\example&gt;pip freeze &gt; requirements.txt</span><br><span class="line">(example) C:\project\example&gt;pip install -r requirements.txt</span><br><span class="line">(example) C:\project\example&gt;pip uninstall -r requirements.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>가상환경의 관리를 GUI로 하고자 한다면 ANACONDA.NAVIGATOR 화면의 왼쪽 메뉴의 Environments 탭을 이용하는 것이 좋고 또 권장된다. 이 경우 해당 프로젝트 폴더 내에서 <code>conda init</code>을 한 번 실행시켜야 한다.<br><img src="https://docs.anaconda.com/_images/nav-defaults.png" alt="image"></p>
+</li>
+</ul>
+<h2 id="VSCODE를-이용한-플러터-개발"><a href="#VSCODE를-이용한-플러터-개발" class="headerlink" title="VSCODE를 이용한 플러터 개발"></a><strong>VSCODE를 이용한 플러터 개발</strong></h2><p><img src="https://miro.medium.com/max/3044/1*hRgOExxt7PP6vBTJFBhHSA.png" alt="image"></p>
+<h3 id="JAVA-JDK-ANDROID-STUDIO와-FLUTTER-SDK-설치"><a href="#JAVA-JDK-ANDROID-STUDIO와-FLUTTER-SDK-설치" class="headerlink" title="JAVA JDK, ANDROID STUDIO와 FLUTTER SDK 설치"></a>JAVA JDK, ANDROID STUDIO와 FLUTTER SDK 설치</h3><ul>
+<li><p>우선 JAVA jdk가 필요하고 jre은 안 된다.</p>
+</li>
+<li><p>그 후 JAVA_HOME 환경변수(<code>C:\\Program Files\Java\jdk1.8.0_241</code>) 설정과 CLASSPATH 환경변수(<code>%JAVA_HOME%\lib</code>) 설정이 필요하다.</p>
+</li>
+<li><p>그 후 ANDROID STUDIO 설치가 반드시 필요하다. 설치 후 FLUTTER 패키지를 설치해야 한다.</p>
+</li>
+<li><p>그리고 FLUTTER SDK를 설치한 후 PATH 환경변수에 ‘<code>flutter\bin</code>‘ 폴더가 포함되도록 해야 한다.</p>
+</li>
+</ul>
+<h3 id="flutter-doctor-실행과-VSCODE-FLUTTER-PLUGIN-설치"><a href="#flutter-doctor-실행과-VSCODE-FLUTTER-PLUGIN-설치" class="headerlink" title="flutter doctor 실행과 VSCODE FLUTTER PLUGIN 설치"></a>flutter doctor 실행과 VSCODE FLUTTER PLUGIN 설치</h3><ul>
+<li><p>그리고 flutter doctor를 수행하면 나오는 에러를 제거해야 하고 설명을 그대로 따르면 되는데 jdk 라이센스를 동의하는 것과 Visual Studio C++ 등을 추가로 설치해야 하는 점 등에 유의해야 한다.</p>
+</li>
+<li><p>VSCODE에서 플러터 관련 플러그인을 설치한다.</p>
+</li>
+<li><p>여기까지 되면 시스템을 다시 시작해야 한다.</p>
+</li>
+</ul>
+<h2 id="VSCODE를-이용한-HEXO-방식-GITHUB-IO-블로그-운영"><a href="#VSCODE를-이용한-HEXO-방식-GITHUB-IO-블로그-운영" class="headerlink" title="VSCODE를 이용한 HEXO 방식 GITHUB.IO 블로그 운영"></a><strong>VSCODE를 이용한 HEXO 방식 GITHUB.IO 블로그 운영</strong></h2><p><img src="https://kdydesign.github.io/2017/06/23/hexo-blog/cover.png" alt="image"></p>
+<h3 id="Git-Node-Hexo-설치"><a href="#Git-Node-Hexo-설치" class="headerlink" title="Git, Node, Hexo 설치"></a>Git, Node, Hexo 설치</h3><ul>
+<li><p>깃을 설치한다.</p>
+</li>
+<li><p>우선 깃허브 가입 후 새 리포지토리를 {자신의 아이디}.github.io 이름으로 만든다.</p>
+</li>
+<li><p>그리고 node를 설치하고 npm을 설치한 후 npm install hexo-cli -g 실행하여 hexo를 설치한다.</p>
+</li>
+<li><p>그 다음 블로그 폴더를 생성할 곳으로 이동해서 터미널로 hexo init {블로그 폴더 이름}을 수행한다.</p>
+</li>
+<li><p>그리고 그 블로그 폴더로 이동하여 터미널에서 다음을 입력한다.</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="Hexo-Theme"><a href="#Hexo-Theme" class="headerlink" title="Hexo Theme"></a>Hexo Theme</h3><ul>
+<li>그 후 자신이 인터넷에서 다운로드 받은 theme을 theme 폴더 안에 복사한다. (NexT theme을 추천)</li>
+<li>그리고 블로그 폴더에 형성된 _config.yaml 속 theme 설정 부분을 theme 폴더 속에 복사한 theme 폴더의 폴더명으로 적어준다.</li>
+</ul>
+<h3 id="Github-Flavored-Markdown-예시"><a href="#Github-Flavored-Markdown-예시" class="headerlink" title="Github Flavored Markdown 예시"></a>Github Flavored Markdown 예시</h3><ul>
+<li><p>일단 Github Flavored Markdown 글을 시도해본다.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">*기울임*&lt;br/&gt;</span><br><span class="line">**굵게**&lt;br/&gt;</span><br><span class="line">~아래첨자~&lt;br/&gt;</span><br><span class="line">~~취소선~~&lt;br/&gt;</span><br><span class="line">***기울이고 굵게***</span><br><span class="line"></span><br><span class="line">| 제목1 | 제목2 |</span><br><span class="line">|:---:|---:|</span><br><span class="line">| 내용1 | 내용2 |</span><br><span class="line">| 내용3 | 내용4 |</span><br><span class="line"></span><br><span class="line">`inline code`</span><br></pre></td></tr></table></figure>
+
+<p><em>기울임</em></p>
+<p><strong>굵게</strong></p>
+<p><del>아래첨자</del><br><del>취소선</del></p>
+<p><em><strong>기울이고 굵게</strong></em></p>
+<table>
+<thead>
+<tr>
+<th align="center">제목1</th>
+<th align="right">제목2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">내용1</td>
+<td align="right">내용2</td>
+</tr>
+<tr>
+<td align="center">내용3</td>
+<td align="right">내용4</td>
+</tr>
+</tbody></table>
+<p><code>inline code</code></p>
+</li>
+</ul>
+<h3 id="Github-가입과-블로그용-레포-준비"><a href="#Github-가입과-블로그용-레포-준비" class="headerlink" title="Github 가입과 블로그용 레포 준비"></a>Github 가입과 블로그용 레포 준비</h3><ul>
+<li><p>깃허브에 배포하기 위해서 다음의 준비를 한다.</p>
+<ul>
+<li><p>_config.yaml 수정</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy</span>:</span><br><span class="line">    <span class="attr">type</span>: git</span><br><span class="line">    <span class="attr">repo</span>: &#123;저장소 주소(예: <span class="attr">https</span>:<span class="comment">//github.com/&#123;자신의 아이디&#125;/&#123;자신의 아이디&#125;.github.io.git)&#125;</span></span><br><span class="line">    <span class="attr">branch</span>: &#123;master 또는 main (어느 것인지는 깃허브에서 확인)&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h3 id="배포"><a href="#배포" class="headerlink" title="배포"></a>배포</h3><ul>
+<li><p>배포용 프로그램 설치</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>배포</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>이상은 리포지토리에 푸시하는 깃의 작동과는 관계가 없다. 이 점에서 Jekyll과 다르며 결국 hexo의 경우 버전 관리는 로컬에서 VSCODE GIT으로 하면 된다. 이를 위해서는 블로그 폴더에서 터미널을 통해 다음을 한 번 수행해야 한다.</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="구글-Adsense-설정"><a href="#구글-Adsense-설정" class="headerlink" title="구글 Adsense 설정"></a>구글 Adsense 설정</h3><ul>
+<li><p>구글 애드센스의 설정 방법을 설명한다.</p>
+<ul>
+<li>우선 애드센스에 가입하여 세금 정보 등을 입력하고 사이트 주소를 등록한다.</li>
+<li>그리고 애드센스에서 광고 단위를 위한 코드 스니펫을 찾아 복사한다.</li>
+<li>그 다음 <code>themes/next/layout/_layout.njk</code> 파일 속 <code>&lt;body&gt;</code> 직전에 그 스니펫을 붙여넣는다.</li>
+<li>단, 광고 단위 삽입용이 아닌 자동광고 생성용 스니펫의 경우에는 이런 방식의 삽입이 어려운 것으로 여겨진다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="수학식-입력을-위한-MathJAX-설정"><a href="#수학식-입력을-위한-MathJAX-설정" class="headerlink" title="수학식 입력을 위한 MathJAX 설정"></a>수학식 입력을 위한 MathJAX 설정</h3><ul>
+<li><p>수학식 입력을 위해서 다음의 작업을 해준다.</p>
+<ul>
+<li><p>우선 HEXO의 렌더러를 교체한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;blog-folder&#125;&gt;npm uninstall hexo-renderer-marked --save</span><br><span class="line">&#123;blog-folder&#125;&gt;npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>그리고 LaTeX 서버사이드 렌더러를 설치한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;blog-folder&#125;&gt;npm install hexo-filter-mathjax</span><br><span class="line">&#123;blog-folder&#125;&gt;hexo clean</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>마지막으로 _config.yaml에서 다음을 기입한다.</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mathjax:</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">none</span> <span class="comment"># or &#x27;ams&#x27; or &#x27;all&#x27;</span></span><br><span class="line">  <span class="attr">single_dollars:</span> <span class="literal">true</span> <span class="comment"># enable single dollar signs as in-line math delimiters</span></span><br><span class="line">  <span class="attr">cjk_width:</span> <span class="number">0.9</span> <span class="comment"># relative CJK char width</span></span><br><span class="line">  <span class="attr">normal_width:</span> <span class="number">0.6</span> <span class="comment"># relative normal (monospace) width</span></span><br><span class="line">  <span class="attr">append_css:</span> <span class="literal">true</span> <span class="comment"># add CSS to pages rendered by MathJax</span></span><br><span class="line">  <span class="attr">every_page:</span> <span class="literal">false</span> <span class="comment"># if true, every page will be rendered by MathJax regardless the `mathjax` setting in Front-matter </span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>이제 다음과 같이 글머리를 시작하면 된다.</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: On the Electrodynamics of Moving Bodies</span><br><span class="line">categories: Physics</span><br><span class="line">date: 1905-06-30 12:00:00</span><br><span class="line"><span class="section">mathjax: true</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line">아래는 center mode:</span><br><span class="line">$$</span><br><span class="line">i\hbar\frac&#123;\partial&#125;&#123;\partial t&#125;\psi=-\frac&#123;\hbar^2&#125;&#123;2m&#125;\nabla^2\psi+V\psi</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">아래는 inline mode:</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span>inline mode: $\sum<span class="emphasis">_&#123;i=0&#125;^n i^2 = \frac&#123;(n^2+n)(2n+1)&#125;&#123;6&#125;$<span class="language-xml"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span></span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis">(...)</span></span><br><span class="line"><span class="emphasis"></span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<center>center mode:</center>
+  $$
+  i\hbar\frac{\partial}{\partial t}\psi=-\frac{\hbar^2}{2m}\nabla^2\psi+V\psi
+  $$
+
+<center>inline mode: $\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$</center>
+  
+<h2 id="VSCODE에서-사용하는-DOCKER"><a href="#VSCODE에서-사용하는-DOCKER" class="headerlink" title="VSCODE에서 사용하는 DOCKER"></a><strong>VSCODE에서 사용하는 DOCKER</strong></h2><p><img src="https://docs.docker.com/engine/images/architecture.svg" alt="image"></p>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+  <ins class="adsbygoogle"
+      style="display:block; text-align:center;"
+      data-ad-layout="in-article"
+      data-ad-format="fluid"
+      data-ad-client="ca-pub-9022646383881973"
+      data-ad-slot="3967182822"></ins>
+</script>
+
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<ul>
+<li><p>아래 영상으로 끝이다.</p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=hWPv9LMlme8&t=1211s">가장 쉽게 배우는 도커</a></p>
+</li>
+<li><p>docker run -it node</p>
+</li>
+<li><p>docker images</p>
+</li>
+<li><p>docker ps</p>
+</li>
+<li><p>docker ps -a</p>
+</li>
+<li><p>docker exec it &lt;PROCESS NAME&gt; bash</p>
+</li>
+<li><p>docker -v</p>
+</li>
+<li><p>docker pull &lt;image name&gt;{:&lt;tag name&gt;}</p>
+</li>
+<li><p>docker create {option} &lt;image name&gt;{:&lt;tag name&gt;}</p>
+<ul>
+<li>-d</li>
+<li>-it</li>
+<li>-p&lt;host port no&gt;:&lt;container port no&gt;</li>
+<li>-rm (remove when termination)</li>
+<li>-v &lt;host folder&gt;:&lt;container folder&gt;</li>
+</ul>
+</li>
+<li><p>docker start &lt;container id or name&gt;</p>
+</li>
+<li><p>docker build</p>
+</li>
+<li><p>docker build -t &lt;image name&gt;</p>
+</li>
+<li><p>docker-compose up</p>
+</li>
+<li><p>docker stop $(docker ps -aq)</p>
+</li>
+<li><p>docker system prune -a</p>
+</li>
+<li><p>docker run –name &lt;image name&gt; -v $(pwd):&#x2F;home&#x2F;nde&#x2F;app -p 8080:8080 &lt;image name&gt;</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="2023/04/07/vscode-ide-for-python-flutter-docker-hexo-in-win10/" data-id="clg5v7086000z7g6f64jo9zxt" data-title="Windows 10에서 VSCODE 개발환경의 설정" class="article-share-link">공유</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/vscode/" rel="tag">vscode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-d3-js-and-other-notes" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="2022/03/31/d3-js-and-other-notes/" class="article-date">
+  <time class="dt-published" datetime="2022-03-31T08:26:25.000Z" itemprop="datePublished">2022-03-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="2022/03/31/d3-js-and-other-notes/">d3 js and other notes</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="pandas-dataframe-to-and-from-python-dictionay"><a href="#pandas-dataframe-to-and-from-python-dictionay" class="headerlink" title="pandas dataframe to and from python dictionay"></a>pandas dataframe to and from python dictionay</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">dic_data=[&#123;<span class="string">&#x27;a&#x27;</span>: <span class="number">0</span>, <span class="string">&#x27;b&#x27;</span>: <span class="string">&#x27;k&#x27;</span>, <span class="string">&#x27;c&#x27;</span>: <span class="literal">True</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&#x27;a&#x27;</span>: <span class="number">3</span>, <span class="string">&#x27;b&#x27;</span>: <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;c&#x27;</span>: <span class="literal">False</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&#x27;a&#x27;</span>: <span class="number">2</span>, <span class="string">&#x27;b&#x27;</span>: <span class="string">&#x27;gd&#x27;</span>, <span class="string">&#x27;c&#x27;</span>: <span class="literal">True</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&#x27;a&#x27;</span>: <span class="number">8</span>, <span class="string">&#x27;b&#x27;</span>: <span class="string">&#x27;sa&#x27;</span>, <span class="string">&#x27;c&#x27;</span>: <span class="literal">True</span>&#125;,</span><br><span class="line">        &#123;<span class="string">&#x27;a&#x27;</span>: <span class="number">8</span>, <span class="string">&#x27;b&#x27;</span>: <span class="string">&#x27;an&#x27;</span>, <span class="string">&#x27;c&#x27;</span>: <span class="literal">False</span>&#125;]</span><br><span class="line"></span><br><span class="line">df_data = pandas.DataFrame.from_records(dic_data)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(df_data.head())</span><br><span class="line"></span><br><span class="line"><span class="comment">#    a   b      c</span></span><br><span class="line"><span class="comment"># 0  0   k   True</span></span><br><span class="line"><span class="comment"># 1  3   a  False</span></span><br><span class="line"><span class="comment"># 2  2  gd   True</span></span><br><span class="line"><span class="comment"># 3  8  sa   True</span></span><br><span class="line"><span class="comment"># 4  8  an  False</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(df_data.to_dict(<span class="string">&#x27;list&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># &#123;</span></span><br><span class="line"><span class="comment"># &#x27;a&#x27;: [0, 3, 2, 8, 8], </span></span><br><span class="line"><span class="comment"># &#x27;b&#x27;: [&#x27;k&#x27;, &#x27;a&#x27;, &#x27;gd&#x27;, &#x27;sa&#x27;, &#x27;an&#x27;], </span></span><br><span class="line"><span class="comment"># &#x27;c&#x27;: [True, False, True, True, False]</span></span><br><span class="line"><span class="comment"># &#125;</span></span><br><span class="line"></span><br><span class="line">dic_data_ = df_data.to_dict(<span class="string">&#x27;list&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(pandas.DataFrame(dic_data_))</span><br><span class="line"></span><br><span class="line"><span class="comment">#    a   b      c</span></span><br><span class="line"><span class="comment"># 0  0   k   True</span></span><br><span class="line"><span class="comment"># 1  3   a  False</span></span><br><span class="line"><span class="comment"># 2  2  gd   True</span></span><br><span class="line"><span class="comment"># 3  8  sa   True</span></span><br><span class="line"><span class="comment"># 4  8  an  False</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(df_data.to_dict(<span class="string">&#x27;records&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># dic_data=[&#123;&#x27;a&#x27;: 0, &#x27;b&#x27;: &#x27;k&#x27;, &#x27;c&#x27;: True&#125;,</span></span><br><span class="line"><span class="comment">#         &#123;&#x27;a&#x27;: 3, &#x27;b&#x27;: &#x27;a&#x27;, &#x27;c&#x27;: False&#125;,</span></span><br><span class="line"><span class="comment">#         &#123;&#x27;a&#x27;: 2, &#x27;b&#x27;: &#x27;gd&#x27;, &#x27;c&#x27;: True&#125;,</span></span><br><span class="line"><span class="comment">#         &#123;&#x27;a&#x27;: 8, &#x27;b&#x27;: &#x27;sa&#x27;, &#x27;c&#x27;: True&#125;,</span></span><br><span class="line"><span class="comment">#         &#123;&#x27;a&#x27;: 8, &#x27;b&#x27;: &#x27;an&#x27;, &#x27;c&#x27;: False&#125;]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="pandas-groupby-x3D-x3D-d3-js-nest-x3D-x3D-elasticsearch-collapse"><a href="#pandas-groupby-x3D-x3D-d3-js-nest-x3D-x3D-elasticsearch-collapse" class="headerlink" title="pandas : groupby &#x3D;&#x3D; d3 js : nest &#x3D;&#x3D; elasticsearch : collapse"></a>pandas : groupby &#x3D;&#x3D; d3 js : nest &#x3D;&#x3D; elasticsearch : collapse</h2><h2 id="javascript-code-for-converting-json-to-array"><a href="#javascript-code-for-converting-json-to-array" class="headerlink" title="javascript code for converting json to array"></a>javascript code for converting json to array</h2><ol>
+<li><code>Object.entries(json)</code></li>
+<li><code>Object.keys(json)</code></li>
+<li><code>Object.values(json)</code></li>
+</ol>
+<ul>
+<li><code>Object.entries(json).slice(0, 9) // like python slicing</code></li>
+</ul>
+<h2 id="javascript-code-for-handling-array"><a href="#javascript-code-for-handling-array" class="headerlink" title="javascript code for handling array"></a>javascript code for handling array</h2><ol>
+<li><code>array.forEach((i)=&gt;&#123;return null;&#125;)</code></li>
+<li><code>array.map((i)=&gt;&#123;return null;&#125;)</code></li>
+<li><code>array.filter((i)=&gt;&#123;return null;&#125;)</code></li>
+</ol>
+<ul>
+<li><code>json = Object.fromEntries(array)</code></li>
+</ul>
+<h2 id="pytorch-cuda-Out-Of-Memeory-OOM-solutions"><a href="#pytorch-cuda-Out-Of-Memeory-OOM-solutions" class="headerlink" title="pytorch cuda Out Of Memeory(OOM) solutions"></a>pytorch cuda Out Of Memeory(OOM) solutions</h2><ol>
+<li><p>before every training epoch starting:</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch.cuda.empty_cache()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>before every testing&#x2F;validating epoch starting:</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> torch.no_grad():</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Be sure that only after fetching batch from data loader, it should be input into cuda device</p>
+</li>
+<li><p>for cpu memory, use del variables</p>
+</li>
+<li><p>be sure about avoiding train history and test history accumulating and calculating torch in cuda</p>
+</li>
+</ol>
+<h2 id="svg-path-d-attr-grammar"><a href="#svg-path-d-attr-grammar" class="headerlink" title="svg path d attr grammar"></a>svg path d attr grammar</h2><ul>
+<li><p>move to:</p>
+<ul>
+<li>M&#x2F;m</li>
+</ul>
+</li>
+<li><p>close at:</p>
+<ul>
+<li>Z&#x2F;z</li>
+</ul>
+</li>
+<li><p>line:</p>
+<ul>
+<li>L&#x2F;l</li>
+<li>H&#x2F;h</li>
+<li>V&#x2F;v</li>
+</ul>
+</li>
+<li><p>Bezier:</p>
+<ul>
+<li>C&#x2F;c</li>
+<li>S&#x2F;s</li>
+<li>Q&#x2F;q</li>
+<li>T&#x2F;t</li>
+</ul>
+</li>
+<li><p>Elliptical:</p>
+<ul>
+<li>A&#x2F;a</li>
+</ul>
+</li>
+<li><p>Math.PI</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="2022/03/31/d3-js-and-other-notes/" data-id="clg5v707k00087g6fbotd2beg" data-title="d3 js and other notes" class="article-share-link">공유</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-dev-laptop-setting" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="2022/03/28/dev-laptop-setting/" class="article-date">
+  <time class="dt-published" datetime="2022-03-28T00:22:52.000Z" itemprop="datePublished">2022-03-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="2022/03/28/dev-laptop-setting/">dev laptop setting</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="dev-laptop-setting"><a href="#dev-laptop-setting" class="headerlink" title="dev laptop setting"></a>dev laptop setting</h2><h3 id="formatting-and-installing-windows-10-x2F-11"><a href="#formatting-and-installing-windows-10-x2F-11" class="headerlink" title="formatting and installing windows 10&#x2F;11"></a>formatting and installing windows 10&#x2F;11</h3><h3 id="install-chrome"><a href="#install-chrome" class="headerlink" title="install chrome"></a>install chrome</h3><h3 id="install-vscode-and-set-a-workplace"><a href="#install-vscode-and-set-a-workplace" class="headerlink" title="install vscode and set a workplace"></a>install vscode and set a workplace</h3><h3 id="install-anaconda-and-conda-init"><a href="#install-anaconda-and-conda-init" class="headerlink" title="install anaconda and conda init"></a>install anaconda and <code>conda init</code></h3><h3 id="install-git-and-git-init-x2F-git-clone"><a href="#install-git-and-git-init-x2F-git-clone" class="headerlink" title="install git and git init&#x2F;git clone ..."></a>install git and <code>git init</code>&#x2F;<code>git clone ...</code></h3><h3 id="admin-mode-pip-install-–upgrade-pip"><a href="#admin-mode-pip-install-–upgrade-pip" class="headerlink" title="admin mode: pip install –upgrade pip"></a>admin mode: pip install –upgrade pip</h3><h3 id="pip-install-konlpy-after-installing-java-sdk-setting-JAVA-HOME-x2F-PATH-to-JAVA-HOME-x2F-bin-and-downloading-and-installing-JPype-1"><a href="#pip-install-konlpy-after-installing-java-sdk-setting-JAVA-HOME-x2F-PATH-to-JAVA-HOME-x2F-bin-and-downloading-and-installing-JPype-1" class="headerlink" title="pip install konlpy after installing java sdk, setting JAVA_HOME &#x2F; PATH to %JAVA_HOME%&#x2F;bin and downloading and installing JPype 1"></a>pip install konlpy after installing java sdk, setting JAVA_HOME &#x2F; PATH to %JAVA_HOME%&#x2F;bin and downloading and installing JPype 1</h3><h3 id="download-elasticsearch-unzip-it-under-root-folder-and-change-config-yaml-file-to-security-false"><a href="#download-elasticsearch-unzip-it-under-root-folder-and-change-config-yaml-file-to-security-false" class="headerlink" title="download elasticsearch, unzip it under root folder and change config yaml file to security false"></a>download elasticsearch, unzip it under root folder and change config yaml file to security false</h3><h3 id="nori-install"><a href="#nori-install" class="headerlink" title="nori install"></a>nori install</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$bin</span>/elasticsearch-plugin install analysis-nori</span><br></pre></td></tr></table></figure>
+
+<h3 id="copy-df-corpus-fullest-and-df-summary-fullest-into-saved-folder"><a href="#copy-df-corpus-fullest-and-df-summary-fullest-into-saved-folder" class="headerlink" title="copy df corpus fullest and df summary fullest into saved folder"></a>copy df corpus fullest and df summary fullest into saved folder</h3><h3 id="install-node-vue-and-quasar"><a href="#install-node-vue-and-quasar" class="headerlink" title="install node, vue and quasar"></a>install node, vue and quasar</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="2022/03/28/dev-laptop-setting/" data-id="clg5v707l00097g6ffuyp0fev" data-title="dev laptop setting" class="article-share-link">공유</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/server/" rel="tag">server</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-tqdm-and-pandas-enumerate-pbar-etc" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="2022/03/25/tqdm-and-pandas-enumerate-pbar-etc/" class="article-date">
+  <time class="dt-published" datetime="2022-03-25T07:27:37.000Z" itemprop="datePublished">2022-03-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="2022/03/25/tqdm-and-pandas-enumerate-pbar-etc/">tqdm and pandas (enumerate, pbar, etc...)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="basic"><a href="#basic" class="headerlink" title="basic"></a>basic</h2><p>  *<code>tqdm.tqdm</code> wrapping iterator in <code>for</code> sentence</p>
+<p>  *<code>enumerate</code> wrapping <code>tqdm.tqdm</code></p>
+<h2 id="pandas-code-using-apply"><a href="#pandas-code-using-apply" class="headerlink" title="pandas code using apply"></a>pandas code using apply</h2><p>  *<code>tqdm.tqdm.pandas()</code></p>
+<p>  *using <code>progress_apply</code> instead of <code>apply</code></p>
+<h2 id="pbar-in-case-of-complex-description-postfix-and-update-step"><a href="#pbar-in-case-of-complex-description-postfix-and-update-step" class="headerlink" title="pbar in case of complex description, postfix, and update step"></a>pbar in case of complex description, postfix, and update step</h2><p>  *<code>with tqdm(total = :int) as pbar:</code> wrapping <code>for</code> sentence</p>
+<p>  *<code>pbar.update(:int)</code></p>
+<p>  *<code>pbar.set_description_str(f&quot;&#123;&quot;)</code></p>
+<p>  *<code>pbar.set_postfix_str(f&quot;&#123;&#125;&quot;)</code></p>
+<p>  *<code>pbar.write(f&quot;&#123;&#125;&quot;)</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="2022/03/25/tqdm-and-pandas-enumerate-pbar-etc/" data-id="clg5v7082000r7g6f6ges9yef" data-title="tqdm and pandas (enumerate, pbar, etc...)" class="article-share-link">공유</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/python/" rel="tag">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-vue3-and-quasar" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="2022/03/10/vue3-and-quasar/" class="article-date">
+  <time class="dt-published" datetime="2022-03-10T08:50:04.000Z" itemprop="datePublished">2022-03-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="2022/03/10/vue3-and-quasar/">vue3 and quasar</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="vue-3-그리고-composition-api"><a href="#vue-3-그리고-composition-api" class="headerlink" title="vue 3 그리고 composition api"></a>vue 3 그리고 composition api</h2><h3 id="주요-특징"><a href="#주요-특징" class="headerlink" title="주요 특징"></a>주요 특징</h3><ul>
+<li><p>composition api</p>
+</li>
+<li><p>multiple root element</p>
+</li>
+<li><p>suspense</p>
+</li>
+<li><p>typescript support</p>
+</li>
+<li><p>multiple v-model</p>
+</li>
+</ul>
+<h3 id="그리고"><a href="#그리고" class="headerlink" title="@ 그리고 :"></a><code>@</code> 그리고 <code>:</code></h3><ul>
+<li><p><code>@</code>은 tag 안에서 <code>v-on:</code>의 alias이고 script 안에서 ‘scr&#x2F;‘의 alias</p>
+</li>
+<li><p><code>:</code>은 <code>v-bind:</code>의 alias</p>
+</li>
+</ul>
+<h3 id="display-속성"><a href="#display-속성" class="headerlink" title="display 속성"></a>display 속성</h3><h4 id="inline-block"><a href="#inline-block" class="headerlink" title="inline-block"></a>inline-block</h4><ul>
+<li><p>element들의 배치에 관한 속성 중 하나</p>
+</li>
+<li><p>inline에서 불가능하던 width, height, margin, padding 지정이 block 속성의 경우처럼 가능한 inline임</p>
+</li>
+<li><p>즉, 속성의 상하 간격 지정이 가능해 짐</p>
+</li>
+</ul>
+<h4 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h4><p><code>display: flex;</code><br><code>align-items: center;</code><br><code>justify-content: space-between;</code></p>
+<h3 id="standard-browser-javascript-event-naming"><a href="#standard-browser-javascript-event-naming" class="headerlink" title="standard browser javascript event naming"></a>standard browser javascript event naming</h3><ul>
+<li><code>mousemove</code> - <code>e.offsetX</code></li>
+</ul>
+<h3 id="vue-3이-html과-연결되는-지점"><a href="#vue-3이-html과-연결되는-지점" class="headerlink" title="vue 3이 html과 연결되는 지점"></a>vue 3이 html과 연결되는 지점</h3><p><code>import &#123; createApp &#125; from &#39;vue&#39;</code></p>
+<p><code>let data = () =&gt; &#123; return &#123; title : &#39;&#39;, text : &#39;&#39;, pages : null &#125;&#125;</code></p>
+<p><code>let method = &#123; method1 : () = &gt; &#123;&#125;, method2 : () =&gt; &#123;&#125; &#125;</code></p>
+<p><code>let obj = &#123; data, method, &#125;</code></p>
+<p><code>app = createApp(obj)</code></p>
+<p><code>app.mount(&#39;#app&#39;)</code></p>
+<h3 id="template-tag-내부의-script-영역"><a href="#template-tag-내부의-script-영역" class="headerlink" title="template tag 내부의 script 영역"></a>template tag 내부의 script 영역</h3><ul>
+<li><p>tag 외부: <code>&#123;&#123;   &#125;&#125;</code></p>
+</li>
+<li><p>tag 내부</p>
+<ul>
+<li>vue directive 내부: <code>&quot;   &quot;</code></li>
+<li>html 속성 내부: <code>v-bind:</code>를 추가한 <code>&quot;   &quot;</code><ul>
+<li>html 속성 중 class의 경우에는 아래와 같이 사용<br><code>v-bind:class = &quot;&#123; fav: true &#125;&quot;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Array-prototype-filter-x3D-gt"><a href="#Array-prototype-filter-x3D-gt" class="headerlink" title="Array.prototype.filter( () &#x3D;&gt; { })"></a>Array.prototype.filter( () &#x3D;&gt; { })</h3><h3 id="css-tips"><a href="#css-tips" class="headerlink" title="css tips"></a>css tips</h3><ul>
+<li><code>border-bottom: 1px solid #ddd;</code></li>
+<li><code>padding-bottom: 10px;</code></li>
+<li><code>margin: 100px auto; //(top bottom) (left right)</code></li>
+<li><code>border-radius: 10px;</code></li>
+<li><code>import &#39;./assets/global.css&#39; //in main.js</code></li>
+<li>태그 선택자 &#x2F; 클래스 선택자(.) &#x2F; 아이디 선택자(#) &#x2F; 하위 선택자( ) &#x2F; 자식 선택자(&gt;) &#x2F; 인접형제 선택자(+) &#x2F; 일반형제 선택자(~) &#x2F; 속성 선택자([…]) &#x2F; 가상클래스 선택자(:)</li>
+</ul>
+<h3 id="TEMPLATE-REFS"><a href="#TEMPLATE-REFS" class="headerlink" title="TEMPLATE REFS"></a>TEMPLATE REFS</h3><ul>
+<li><code>&lt;input type = &quot;text&quot; ref = &quot;name&quot;&gt; ... &lt;/ ... &gt;</code></li>
+<li><code>&lt;button @click=&quot;hC&quot;&gt;click&lt;/button&gt;</code></li>
+<li><code>... hC()&#123; this.$refs.name.classList.add(&#39;active&#39;)&#125;</code></li>
+<li><code>... hc()&#123; this.$refs.name.focus()</code></li>
+</ul>
+<h3 id="teleport"><a href="#teleport" class="headerlink" title="teleport"></a>teleport</h3><ul>
+<li><code>&lt;div class = &quot;modals&quot; /&gt; //in index.html</code></li>
+<li><code>&lt;teleport to=&quot;modals&quot;&gt; //in vue components</code></li>
+</ul>
+<h3 id="PROPS"><a href="#PROPS" class="headerlink" title="PROPS"></a>PROPS</h3><ul>
+<li>부모 컴포넌트 tag 속성값 &#x3D;&gt; 자식 컴포넌트 script 변수</li>
+<li><code>&lt;Modal header= &quot; ... &quot; text = &quot; ... &quot; :abc = &quot;[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]&quot; /&gt; // in 부모 컴포넌트 tag</code></li>
+<li><code>props: [&#39;header&#39;, &#39;text&#39;, &#39;abc&#39;] // 자식 컴포넌트 Modal.vue script export 영역</code></li>
+<li><code>&lt;div :class = &quot;&#123; sale: text === &#39;&#39;&#125;&quot;&gt;// 자식 컴포넌트 Modal.vue tag 영역</code></li>
+</ul>
+<h3 id="커스텀-이벤트"><a href="#커스텀-이벤트" class="headerlink" title="커스텀 이벤트"></a>커스텀 이벤트</h3><ul>
+<li><code>&lt;Modal @close = &quot; ... &quot; /&gt; // 부모 컴포넌트 tag 영역</code></li>
+<li><code>this.$emit(&quot;close&quot;) // 자식 컴포넌트 script 영역</code></li>
+</ul>
+<h3 id="event-modifier"><a href="#event-modifier" class="headerlink" title="event modifier"></a>event modifier</h3><ul>
+<li><code>click.self</code></li>
+<li><code>click.prevent</code></li>
+<li><code>click.alt</code></li>
+</ul>
+<h3 id="SLOT"><a href="#SLOT" class="headerlink" title="SLOT"></a>SLOT</h3><ul>
+<li>슬롯은 일반적으로 opening tag와 closing tag 사이의 공간을 의미</li>
+<li><code>&lt;Modal &gt; ... &lt;/Modal&gt; //부모 컴포넌트</code></li>
+<li><code>&lt;slot&gt; fallback &lt;/slot&gt; //자식 컴포넌트</code></li>
+<li><code>&lt;Modal&gt;&lt;template v-slot = &quot;link&quot;&gt; ... &lt;/template&gt;&lt;/Modal&gt;</code></li>
+<li><code>&lt;slot name = &quot;link&quot;&gt; fallback &lt;/slot&gt;</code></li>
+</ul>
+<h3 id="vue-router"><a href="#vue-router" class="headerlink" title="vue router"></a>vue router</h3><ul>
+<li>router param<ul>
+<li><code>path: &#39;/jobs/:id</code></li>
+<li><code>$route.params.id //this 영역에 있지 않음</code></li>
+<li><code>&lt;router-link :to=&quot;&#123;name: &#39;Jobs&#39;, params: &#123; id: 3&#125;&#125;&quot;</code></li>
+</ul>
+</li>
+<li><code>this.$router</code><ul>
+<li><code>this.$router.go(-1)</code></li>
+<li><code>this.$router.push(&#123; name: &#39;Home&#39; &#125;)</code></li>
+</ul>
+</li>
+<li>etc.<ul>
+<li><code>path: &#39;/catchAll(.*)&#39;</code></li>
+<li><code>redirect: &#39;/...&#39;</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="FETCH"><a href="#FETCH" class="headerlink" title="FETCH"></a>FETCH</h3><p><code>mounted() &#123; fetch(&#39;...&#39;).then(res=&gt;res.json()).then(data=&gt;this.jobs= data).catch(err =&gt; console.log(err.message))&#125;</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="2022/03/10/vue3-and-quasar/" data-id="clg5v708d001a7g6ffx8h5kjd" data-title="vue3 and quasar" class="article-share-link">공유</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/vue3/" rel="tag">vue3</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-pytorch-recap" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="2022/02/09/pytorch-recap/" class="article-date">
+  <time class="dt-published" datetime="2022-02-09T00:34:17.000Z" itemprop="datePublished">2022-02-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="2022/02/09/pytorch-recap/">pytorch recap</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="math"><a href="#math" class="headerlink" title="math"></a>math</h2><ul>
+<li><p>linear algebra</p>
+</li>
+<li><p>statistics</p>
+</li>
+<li><p>calculus</p>
+</li>
+</ul>
+<h2 id="algorithm"><a href="#algorithm" class="headerlink" title="algorithm"></a>algorithm</h2><ul>
+<li><p>array &#x2F; linked list</p>
+</li>
+<li><p>priority queue</p>
+</li>
+<li><p>tree</p>
+</li>
+<li><p>graph</p>
+</li>
+</ul>
+<h2 id="python"><a href="#python" class="headerlink" title="python"></a>python</h2><ul>
+<li><p>pandas &#x2F; numpy &#x2F; matplotlib</p>
+</li>
+<li><p>flask restful api server</p>
+</li>
+<li><p>elasticsearch restful api client</p>
+</li>
+<li><p>multiprocessing</p>
+</li>
+<li><p>regex</p>
+</li>
+<li><p>selenium</p>
+</li>
+</ul>
+<h2 id="pytorch"><a href="#pytorch" class="headerlink" title="pytorch"></a>pytorch</h2><ul>
+<li><p>tensor</p>
+</li>
+<li><p>module</p>
+</li>
+<li><p>loss function</p>
+</li>
+<li><p>optimizer</p>
+</li>
+</ul>
+<h2 id="node"><a href="#node" class="headerlink" title="node"></a>node</h2><ul>
+<li><p>vue</p>
+</li>
+<li><p>quasar</p>
+</li>
+<li><p>d3</p>
+</li>
+<li><p>draggable</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="2022/02/09/pytorch-recap/" data-id="clg5v707s000f7g6f2so5cros" data-title="pytorch recap" class="article-share-link">공유</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/ml/" rel="tag">ml</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-vue-vuetify-recap" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="2021/12/10/vue-vuetify-recap/" class="article-date">
+  <time class="dt-published" datetime="2021-12-10T09:18:17.000Z" itemprop="datePublished">2021-12-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="2021/12/10/vue-vuetify-recap/">vue-recap</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="1-vuetify"><a href="#1-vuetify" class="headerlink" title="1. vuetify"></a>1. vuetify</h2><h3 id="v-card"><a href="#v-card" class="headerlink" title="v-card"></a>v-card</h3><h4 id="click"><a href="#click" class="headerlink" title="@click"></a>@click</h4><h5 id="working-well"><a href="#working-well" class="headerlink" title="working well"></a>working well</h5><h2 id="2-javascript-general"><a href="#2-javascript-general" class="headerlink" title="2. javascript general"></a>2. javascript general</h2><h3 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h3><h4 id="Object-keys-obj-forEach-each-x3D-gt-…"><a href="#Object-keys-obj-forEach-each-x3D-gt-…" class="headerlink" title="Object.keys(obj).forEach( each &#x3D;&gt; { … })"></a>Object.keys(obj).forEach( each &#x3D;&gt; { … })</h4><h4 id="Object-values-obj-forEach-each-x3D-gt-…"><a href="#Object-values-obj-forEach-each-x3D-gt-…" class="headerlink" title="Object.values(obj).forEach( each &#x3D;&gt; { … })"></a>Object.values(obj).forEach( each &#x3D;&gt; { … })</h4><h4 id="Object-entries-obj-forEach-each-x3D-gt-…"><a href="#Object-entries-obj-forEach-each-x3D-gt-…" class="headerlink" title="Object.entries(obj).forEach( each &#x3D;&gt; { … })"></a>Object.entries(obj).forEach( each &#x3D;&gt; { … })</h4><h3 id="setTimeOut"><a href="#setTimeOut" class="headerlink" title="setTimeOut"></a>setTimeOut</h3><h4 id="LOADING-SCREEN"><a href="#LOADING-SCREEN" class="headerlink" title="LOADING SCREEN"></a>LOADING SCREEN</h4><h2 id="3-키워드-붙여써도-konlpy-Okt로-띄어쓰는-것으로-전환처리"><a href="#3-키워드-붙여써도-konlpy-Okt로-띄어쓰는-것으로-전환처리" class="headerlink" title="3. 키워드 붙여써도 konlpy.Okt로 띄어쓰는 것으로 전환처리"></a>3. 키워드 붙여써도 konlpy.Okt로 띄어쓰는 것으로 전환처리</h2><h2 id="4-google-font의-vue-component-적용"><a href="#4-google-font의-vue-component-적용" class="headerlink" title="4. google font의 vue component 적용"></a>4. google font의 vue component 적용</h2><h2 id="5-text-field-css-font-size-color-변경"><a href="#5-text-field-css-font-size-color-변경" class="headerlink" title="5. text field css font size color 변경"></a>5. text field css font size color 변경</h2><h2 id="6-추천-검색어-vuetify-chip-group-처리"><a href="#6-추천-검색어-vuetify-chip-group-처리" class="headerlink" title="6. 추천 검색어 vuetify chip group 처리"></a>6. 추천 검색어 vuetify chip group 처리</h2><h2 id="7-스크롤바-커스터마이즈"><a href="#7-스크롤바-커스터마이즈" class="headerlink" title="7. 스크롤바 커스터마이즈"></a>7. 스크롤바 커스터마이즈</h2><h2 id="8-판시사항-글자크기-조정"><a href="#8-판시사항-글자크기-조정" class="headerlink" title="8. 판시사항 글자크기 조정"></a>8. 판시사항 글자크기 조정</h2><h2 id="9-scrollHandler를-통한-lazy-loading-for-vuetify-v-window-구현"><a href="#9-scrollHandler를-통한-lazy-loading-for-vuetify-v-window-구현" class="headerlink" title="9. scrollHandler를 통한 lazy loading for vuetify v-window 구현"></a>9. scrollHandler를 통한 lazy loading for vuetify v-window 구현</h2><h2 id="10-svg-일부-요소-제거"><a href="#10-svg-일부-요소-제거" class="headerlink" title="10. svg 일부 요소 제거"></a>10. svg 일부 요소 제거</h2><h2 id="11-v-chip-줄바꿈-구현"><a href="#11-v-chip-줄바꿈-구현" class="headerlink" title="11. v-chip 줄바꿈 구현"></a>11. v-chip 줄바꿈 구현</h2><h2 id="12-vuedraggable-in-Collection-vue-구현"><a href="#12-vuedraggable-in-Collection-vue-구현" class="headerlink" title="12. vuedraggable in Collection.vue 구현"></a>12. vuedraggable in Collection.vue 구현</h2><h2 id="13-ref에-의한-하위-컴포넌트-메소드-접근시-하위-컴포넌트는-v-show를-사용해야-함"><a href="#13-ref에-의한-하위-컴포넌트-메소드-접근시-하위-컴포넌트는-v-show를-사용해야-함" class="headerlink" title="13. ref에 의한 하위 컴포넌트 메소드 접근시 하위 컴포넌트는 v-show를 사용해야 함"></a>13. ref에 의한 하위 컴포넌트 메소드 접근시 하위 컴포넌트는 v-show를 사용해야 함</h2><h2 id="14-javascript-string-slice-메소드는-파이썬에서-slicing-기능을-대체함"><a href="#14-javascript-string-slice-메소드는-파이썬에서-slicing-기능을-대체함" class="headerlink" title="14. javascript string slice 메소드는 파이썬에서 slicing 기능을 대체함"></a>14. javascript string slice 메소드는 파이썬에서 slicing 기능을 대체함</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="2021/12/10/vue-vuetify-recap/" data-id="clg5v708900167g6fcmj1h8bu" data-title="vue-recap" class="article-share-link">공유</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/vue2/" rel="tag">vue2</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-wp-migration" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="2021/11/15/wp-migration/" class="article-date">
+  <time class="dt-published" datetime="2021-11-14T23:15:45.000Z" itemprop="datePublished">2021-11-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="2021/11/15/wp-migration/">wp-migration</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Download-all-the-files-under-‘html’-folder-with-FTP"><a href="#Download-all-the-files-under-‘html’-folder-with-FTP" class="headerlink" title="Download all the files under ‘html’ folder with FTP"></a>Download all the files under ‘html’ folder with FTP</h2><h2 id="Back-up-DB-with-WP-DB-Manager-or-something-like-that"><a href="#Back-up-DB-with-WP-DB-Manager-or-something-like-that" class="headerlink" title="Back up DB with WP DB Manager or something like that"></a>Back up DB with WP DB Manager or something like that</h2><h2 id="Check-the-current-WP-version"><a href="#Check-the-current-WP-version" class="headerlink" title="Check the current WP version"></a>Check the current WP version</h2><h2 id="Initialize-the-hosting-server"><a href="#Initialize-the-hosting-server" class="headerlink" title="Initialize the hosting server"></a>Initialize the hosting server</h2><h2 id="Install-WP-with-the-same-version"><a href="#Install-WP-with-the-same-version" class="headerlink" title="Install WP with the same version"></a>Install WP with the same version</h2><h2 id="Upload-the-files"><a href="#Upload-the-files" class="headerlink" title="Upload the files"></a>Upload the files</h2><h2 id="Restore-DB-wth-WP-DB-Manager-or-something-like-that"><a href="#Restore-DB-wth-WP-DB-Manager-or-something-like-that" class="headerlink" title="Restore DB wth WP DB Manager or something like that"></a>Restore DB wth WP DB Manager or something like that</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="2021/11/15/wp-migration/" data-id="clg5v708d001b7g6f4t9nfakq" data-title="wp-migration" class="article-share-link">공유</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/wordpress/" rel="tag">wordpress</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-vue-2-project-setting-from-scratch" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="2021/11/09/vue-2-project-setting-from-scratch/" class="article-date">
+  <time class="dt-published" datetime="2021-11-09T09:03:21.000Z" itemprop="datePublished">2021-11-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="2021/11/09/vue-2-project-setting-from-scratch/">vue-2-project-setting-from-scratch</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="노드-제거-후-새로-설치"><a href="#노드-제거-후-새로-설치" class="headerlink" title="노드 제거 후 새로 설치"></a>노드 제거 후 새로 설치</h2><ul>
+<li><p>제어판에서 프로그램 제거할 것</p>
+</li>
+<li><p><code>node.org</code>에 따라서 <code>npm</code> 이용 LTS 버전 설치</p>
+</li>
+</ul>
+<h2 id="뷰-설치"><a href="#뷰-설치" class="headerlink" title="뷰 설치"></a>뷰 설치</h2><ul>
+<li><p><code>node_modules</code> 폴더 삭제</p>
+</li>
+<li><p><code>vue.org</code>에 따라서 <code>npm</code> 이용 LTS 버전 설치</p>
+</li>
+</ul>
+<h2 id="뷰-프로젝트-생성"><a href="#뷰-프로젝트-생성" class="headerlink" title="뷰 프로젝트 생성"></a>뷰 프로젝트 생성</h2><ul>
+<li><p>프로젝트 폴더 생성할 폴더에서 <code>vue create &#123;project folder name&#125;</code> 실행</p>
+</li>
+<li><p>설치 시 <code>vuex</code> 및 <code>vue-router</code>를 선택하고 <code>eslint</code> 및 <code>babel</code>도 선택할 것</p>
+</li>
+</ul>
+<h2 id="그-다음-관련-모듈-설치"><a href="#그-다음-관련-모듈-설치" class="headerlink" title="그 다음 관련 모듈 설치"></a>그 다음 관련 모듈 설치</h2><ul>
+<li><p><code>vue add vuetify</code></p>
+</li>
+<li><p><code>npm install --save axios bootstrap bootstrap-vue p5 d3 d3-scale d3-axis</code></p>
+</li>
+</ul>
+<h2 id="마지막으로-기존-프로젝트의-public-및-src를-덮어쓰고-아래-파일도-이동"><a href="#마지막으로-기존-프로젝트의-public-및-src를-덮어쓰고-아래-파일도-이동" class="headerlink" title="마지막으로 기존 프로젝트의 public 및 src를 덮어쓰고 아래 파일도 이동"></a>마지막으로 기존 프로젝트의 <code>public</code> 및 <code>src</code>를 덮어쓰고 아래 파일도 이동</h2><ul>
+<li><code>.gitignore</code></li>
+<li><code>vue.config.js</code></li>
+<li><code>editorconfig</code></li>
+<li><code>Dockerfile</code></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="2021/11/09/vue-2-project-setting-from-scratch/" data-id="clg5v708700117g6f9msq1wyu" data-title="vue-2-project-setting-from-scratch" class="article-share-link">공유</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/vue2/" rel="tag">vue2</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-vue-api-lazy-loading" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="2021/11/08/vue-api-lazy-loading/" class="article-date">
+  <time class="dt-published" datetime="2021-11-08T07:05:38.000Z" itemprop="datePublished">2021-11-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="2021/11/08/vue-api-lazy-loading/">vue api lazy loading</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="IntersectionObserver-Class"><a href="#IntersectionObserver-Class" class="headerlink" title="IntersectionObserver Class"></a>IntersectionObserver Class</h2><h2 id="Making-elements-for-data-should-precede-fetching-relevant-data-from-api"><a href="#Making-elements-for-data-should-precede-fetching-relevant-data-from-api" class="headerlink" title="Making elements for data should precede fetching relevant data from api"></a>Making elements for data should precede fetching relevant data from api</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="2021/11/08/vue-api-lazy-loading/" data-id="clg5v708700137g6fgtmh7m1u" data-title="vue api lazy loading" class="article-share-link">공유</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/vue2/" rel="tag">vue2</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><a class="page-number" href="page/3/">3</a><a class="extend next" rel="next" href="page/2/">다음 &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">태그</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/ml/" rel="tag">ml</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/python-javascript/" rel="tag">python, javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/server/" rel="tag">server</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/vi/" rel="tag">vi</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/vscode/" rel="tag">vscode</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/vue2/" rel="tag">vue2</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/vue3/" rel="tag">vue3</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/wordpress/" rel="tag">wordpress</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">태그 클라우드</h3>
+    <div class="widget tagcloud">
+      <a href="tags/git/" style="font-size: 10px;">git</a> <a href="tags/javascript/" style="font-size: 15px;">javascript</a> <a href="tags/ml/" style="font-size: 20px;">ml</a> <a href="tags/python/" style="font-size: 12.5px;">python</a> <a href="tags/python-javascript/" style="font-size: 10px;">python, javascript</a> <a href="tags/server/" style="font-size: 15px;">server</a> <a href="tags/vi/" style="font-size: 10px;">vi</a> <a href="tags/vscode/" style="font-size: 10px;">vscode</a> <a href="tags/vue2/" style="font-size: 17.5px;">vue2</a> <a href="tags/vue3/" style="font-size: 10px;">vue3</a> <a href="tags/wordpress/" style="font-size: 10px;">wordpress</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">아카이브</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2023/04/">4월 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/03/">3월 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/02/">2월 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/12/">12월 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/11/">11월 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/10/">10월 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/05/">5월 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">최근 포스트</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="2023/04/07/vscode-ide-for-python-flutter-docker-hexo-in-win10/">Windows 10에서 VSCODE 개발환경의 설정</a>
+          </li>
+        
+          <li>
+            <a href="2022/03/31/d3-js-and-other-notes/">d3 js and other notes</a>
+          </li>
+        
+          <li>
+            <a href="2022/03/28/dev-laptop-setting/">dev laptop setting</a>
+          </li>
+        
+          <li>
+            <a href="2022/03/25/tqdm-and-pandas-enumerate-pbar-etc/">tqdm and pandas (enumerate, pbar, etc...)</a>
+          </li>
+        
+          <li>
+            <a href="2022/03/10/vue3-and-quasar/">vue3 and quasar</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Heechan Jeong<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
